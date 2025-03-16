@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent {
+  isMobileMenuVisible = signal<boolean>(false);
+
+  showMobileMenu() {
+    this.isMobileMenuVisible.update(state => !state);
+  }
 }
