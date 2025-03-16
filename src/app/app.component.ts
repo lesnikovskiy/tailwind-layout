@@ -10,5 +10,11 @@ export class AppComponent {
 
   showMobileMenu() {
     this.isMobileMenuVisible.update(state => !state);
+    if (this.isMobileMenuVisible()) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
   }
 }
